@@ -1,38 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<title>
-    <?php wp_title(''); ?>
-    <?php if (is_single() or is_page() or is_category()) { ?>
-        -
-    <?php } ?>
-    <?php bloginfo('name'); ?>
-</title>
-<!--link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/logo.ico" /-->
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="<?php printf(__('%s RSS Feed', 'kubrick'), get_bloginfo('name')); ?>" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="<?php printf(__('%s Atom Feed', 'kubrick'), get_bloginfo('name')); ?>" href="<?php bloginfo('atom_url'); ?>" />
+<meta charset="<?php bloginfo('charset'); ?>" />
+<title><?php
+    /*
+     * Print the <title> tag based on what is being viewed.
+     */
+    global $page, $paged;
+
+    wp_title('-', true, 'right');
+
+    // Add the blog name.
+    bloginfo('name');
+
+    // Add the blog description for the home/front page.
+    $site_description = get_bloginfo('description', 'display');
+    if ($site_description && ( is_home() || is_front_page() ))
+        echo " - $site_description";
+
+    // Add a page number if necessary:
+    if ($paged >= 2 || $page >= 2)
+        echo ' - ' . sprintf(__('Page %s', 'twentyten'), max($paged, $page));
+?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php if (is_singular())
-    wp_enqueue_script('comment-reply'); ?>
-<?php wp_head(); ?>
+<?php
+    /* We add some JavaScript to pages with the comment form
+     * to support sites with threaded comments (when in use).
+     */
+    if (is_singular() && get_option('thread_comments'))
+        wp_enqueue_script('comment-reply');
+
+    /* Always have wp_head() just before the closing </head>
+     * tag of your theme, or you will break many plugins, which
+     * generally use this hook to add elements to <head> such
+     * as styles, scripts, and meta tags.
+     */
+    wp_head();
+?>
 </head>
-    
 <body>
-<div id="container">
-<div id="head">
-    <!--img src="<?php bloginfo('template_url'); ?>/images/logo-50x48.gif" alt="Logo" /-->
-    <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-    <p><?php bloginfo('description'); ?></p>
+<div id="header">
+    <h1><?php bloginfo('name') ?></h1>
+    <h3><?php bloginfo('description') ?></h3>
+    <p>&quot;The real danger is not that computers will begin to think
+        like men, but that men will begin to think like computers.&quot;</p>
+    <p class="by">~ Sydney J. Harris</p>
+    <div class="clear"></div>
 </div>
-<div id="navi">
-    <ul id="left-menu" class="menu-ul">
-        <li><a href="<?php bloginfo('url'); ?>">HOME<p>Frontpage</p></a></li>
-        <li><a href="http://www.maoxuli.com/">ABOUT ME<p>Personal website</p></a></li>
-        <li><a href="http://www.notdreams.com/" target="_blank">NOT DREAMS<p>My life, my story</p></a></li>
-    </ul>
-    <ul id="right-menu" class="menu-ul">
-        <li><a href="http://www.ppengine.com/" target="_blank">PPEngine<p>P2P Internet</p></a></li>
-    </ul>
-</div>
+<div id="main">
+    <div id="top">
+        <ul>
+            <li><a href="http://www.maoxuli.com/">HOME</a></li>
+            <li><a href="http://www.maoxuli.com/portfolio.html">PORTFOLIO</a></li>
+            <li class="current_item"><a href="<?php echo get_option('home'); ?>">ARTICLES</a></li>
+        </ul>
+    </div>

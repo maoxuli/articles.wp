@@ -1,12 +1,39 @@
-<div id="foot">
-    <p>Copyright 2010, <a href="http://www.limaoxu.net">Maoxu Li</a>. Based on SimpleG 2.5.</p>
-    <ul class="menu-ul-sample">
-        <li><a href="<?php bloginfo('url'); ?>">Home</a></li>
-        <li><a href="http://www.maoxuli.com/">About me</a></li>
-        <li><a href="http://www.ppengine.com/" target="_blank">PPEngine</a></li>
-        <li><a href="http://www.notdreams.com/" target="_blank">Not Dreams</a></li>
+</div>
+<div id="footer">
+    <ul>
+        <li class="first-item"><a href="http://www.maoxuli.com/">Home</a></li>
+        <li><a href="http://www.maoxuli.com/portfolio.html">Portfolio</a></li>
+        <li><a href="<?php echo get_option('home'); ?>">Articles</a></li>
     </ul>
+    <p>Copyright 2010-2011, <a href="http://www.maoxuli.com/">Maoxu Li</a>, All rights reserved.</p>
+    <p>Powered by wordpress. <a href="http://maoxuli.com/wp/wp-login.php" target="_blank">Login</a> &dagger;</p>
+    <div id="counter">
+        <!-- Start of StatCounter Code --> 
+        <script type="text/javascript">
+            var sc_project=4861300; 
+            var sc_invisible=0; 
+            var sc_partition=57; 
+            var sc_click_stat=1; 
+            var sc_security="4fdb6491"; 
+        </script> 
+        <script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+        <noscript>
+        <div class="statcounter">
+            <a title="counter" href="http://www.statcounter.com/" target="_blank"> 
+                <img class="statcounter" src="http://c.statcounter.com/4861300/0/4fdb6491/0/" 
+                     alt="counter" /></a>
+        </div>
+        </noscript>
+        <!-- End of StatCounter Code -->
+    </div>
 </div>
-<?php wp_footer(); ?>
-</div>
-</body></html>
+<?php
+    /* Always have wp_footer() just before the closing </body>
+     * tag of your theme, or you will break many plugins, which
+     * generally use this hook to reference JavaScript files.
+     */
+
+    wp_footer();
+?>
+</body>
+</html>

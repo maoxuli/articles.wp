@@ -1,10 +1,9 @@
 <?php get_header(); ?>
-
-<div id="post-single">
-  <div class="post-home">
-    <h2 class="post-title">404ing</h2>
-    <p>Something obviously isn't right if you're reading this. The URL you entered or followed no longer seems to exist, has been removed, or has been replaced. If you feel that this an error that needs to be addressed, feel free to contact the administrator of this website.</p>
-  </div>
-</div>
 <?php get_sidebar(); ?>
+<div id="singlepost">
+    <div class="post">
+        <h2>404: Page Not Found</h2>
+        <p>Oops! It seems the page you're looking for doesn't exist. Sorry!</p>
+    </div>
+</div>
 <?php get_footer(); ?>

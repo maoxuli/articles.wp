@@ -1,73 +1,97 @@
-<div id="side-bar">
-  <ul>
-    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
-    <li id="search">
-      <?php include (TEMPLATEPATH . '/searchform.php'); ?>
-    </li>
-    <li class="side-list">
-      <h3>Popular Tags</h3>
-      <?php wp_tag_cloud('smallest=10&largest=22&orderby=count&order=DESC&format=list&number=10'); ?>
-    <li class="side-list">
-      <h3>Categories</h3>
-      <ul>
-        <?php wp_list_categories('orderby=order&show_count=1&hide_empty=0&hierarchical=true&title_li='); ?>
-      </ul>
-    </li>
-    <li class="side-list">
-      <h3>Recent Posts</h3>
-      <ul>
-        <?php get_archives('postbypost', 5); ?>
-      </ul>
-    </li>
-    <li class="side-list">
-      <h3>Recent Comments</h3>
-      <ul>
-        <?php
-global $wpdb;
-$sql = "SELECT DISTINCT ID, post_title, post_password, comment_ID,
-comment_post_ID, comment_author, comment_date_gmt, comment_approved,
-comment_type,comment_author_url,
-SUBSTRING(comment_content,1,20) AS com_excerpt
-FROM $wpdb->comments
-LEFT OUTER JOIN $wpdb->posts ON ($wpdb->comments.comment_post_ID =
-$wpdb->posts.ID)
-WHERE comment_approved = '1' AND comment_type = '' AND
-post_password = ''
-ORDER BY comment_date_gmt DESC
-LIMIT 6";
-$comments = $wpdb->get_results($sql);
-$output = $pre_HTML;
-
-foreach ($comments as $comment) {
-$output .= "\n<li>"." <a href=\"" . get_permalink($comment->ID) .
-"#comment-" . $comment->comment_ID . "\" title=\"on " .
-$comment->post_title . "\">" .strip_tags($comment->comment_author)
-."</a>"."："  . strip_tags($comment->com_excerpt)
-."</li>";
-}
-
-$output .= $post_HTML;
-echo $output;?>
-      </ul>
-    </li>
-    <li class="side-list">
-      <h3>Archives</h3>
-      <ul>
-        <?php wp_get_archives('type=monthly'); ?>
-      </ul>
-    </li>
-    <li class="side-list">
-      <h3>Blog roll</h3>
-      <ul>
-        <?php get_links('-1', '<li>', '</li>', '<br />', FALSE, 'id', FALSE, FALSE, -1, FALSE); ?>
-      </ul>
-    </li>
-    <!--li class="widget widget_pages">
-<h3><span>||</span>Pages</h3>
-<ul>
- <?php wp_list_pages('title_li='); ?>
-</ul>
-</li-->
-    <?php endif; ?>
-  </ul>
+<div id="sidebar">
+    <div id="highlights">
+        <img src="<?php bloginfo('wpurl'); ?>/wp-content/uploads/logo/logo.png" />
+        <div class="box">
+            <?php
+            $sticky = get_option( 'sticky_posts' );
+            $args = array(
+                'posts_per_page' => 6,
+                'post__in' => $sticky,
+                'ignore_sticky_posts' => 1
+            );
+            $the_query = new WP_Query( $args );
+            ?>
+            <ul>
+                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                <?php endwhile; ?>
+            </ul>
+            <?php wp_reset_postdata(); ?>
+            <p class="more"><a href="<?php echo get_option('home'); ?>/highlights">More &raquo;</a></p>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="menu">
+        <?php /* If this is home page */
+        if( is_home() ) { ?>
+            <ul>
+                <li class="current_item"><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
+                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
+            </ul>
+            <h2>Home</h2>
+            <?php /*If this is a category */
+        } elseif ( is_category() ) { ?>
+            <ul>
+                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
+                <li class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
+            </ul>    
+            <h2><?php single_cat_title(); ?></h2>
+            <?php /* If this is a tag */
+        } elseif ( is_tag() ) { ?>
+            <ul>
+                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
+                <li class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
+            </ul>
+            <h2><?php single_tag_title(); ?></h2>
+            <?php /* If this is highlights page */
+        } elseif ( is_page('highlights') ) { ?>
+            <ul>
+                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li class="current_item"><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
+                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
+            </ul>
+            <h2>Highlights</h2>
+            <?php /* If this is a single page */
+        } elseif ( is_single() ) { ?>
+            <ul>
+                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
+                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
+            </ul>
+            <h2>Article</h2>
+            <?php /* else */
+        } else { ?>
+            <ul>
+                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
+                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
+            </ul>
+        <?php } ?> 
+        <div class="clear"></div>
+    </div>
+    <div id="mask"></div> 
+    <div id="topics" onmouseover="showtopics()" onmouseout="closetopics()">
+        <h3>Categories</h3>
+        <ul class="wp-cat-list">
+            <?php wp_list_categories('orderby=order&style=list&show_count=1&hide_empty=1&depth=1&title_li='); ?> 
+        </ul>
+        <h3>Tags</h3>
+        <?php wp_tag_cloud('format=list&smallest=9&largest=16&number=20&orderby=name&order=ASC&separator= . '); ?>
+    </div> 
 </div>
+<script type="text/javascript" language="javascript" >
+    <!--
+    function showtopics(){
+        document.getElementById("mask").style.display="block";
+        document.getElementById("topics").style.display="block";
+    }
+    function closetopics(){
+        document.getElementById("mask").style.display="none";
+        document.getElementById("topics").style.display="none";
+    }
+    -->
+</script>

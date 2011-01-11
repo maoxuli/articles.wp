@@ -1,19 +1,23 @@
+<?php
+/* Template Name: Highlights */
+?>
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 <div id="postlist">
-    <?php if ( is_home() ) {
+    <?php
         $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+        $sticky = get_option( 'sticky_posts' );
         $args = array(
             'paged' => $paged,
+            'post__in' => $sticky,
             'ignore_sticky_posts' => 1
         );
         query_posts( $args );
-    }
     ?>
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="section">
-                <a href="<?php the_permalink(); ?>">
+                <a href="<?php the_permalink(); ?>" target="_blank">
                     <img src="<?php 
                         $logo = get_post_meta($post->ID, "post_image_value", $single = true); 
                         if(!$logo) {
