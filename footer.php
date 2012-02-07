@@ -1,12 +1,14 @@
+    </div>
 </div>
 <div id="footer">
     <ul>
-        <li class="first-item"><a href="http://www.maoxuli.com/">Home</a></li>
-        <li><a href="http://www.maoxuli.com/portfolio.html">Portfolio</a></li>
-        <li><a href="<?php echo get_option('home'); ?>">Articles</a></li>
+        <li class="first-item"><a href="http://www.maoxuli.com/about.html">About</a></li>
+        <li><a href="http://www.maoxuli.com/sitemap.html">Sitemap</a></li>
+        <li><a href="http://www.maoxuli.com/guestbook/">Guestbook</a></li>
+        <li><a href="http://www.limaoxu.com/">中文</a></li>
     </ul>
-    <p>Copyright 2010-2011, <a href="http://www.maoxuli.com/">Maoxu Li</a>, All rights reserved.</p>
-    <p>Powered by wordpress. <a href="http://maoxuli.com/wp/wp-login.php" target="_blank">Login</a> &dagger;</p>
+    <p>Copyright 2008-2012, <a href="http://www.maoxuli.com/">Maoxu Li</a>, All rights reserved.</p>
+    <p>Powered by wordpress. <a href="http://www.maoxuli.com/insights/wp-login.php" target="_blank">Login</a> &dagger;</p>
     <div id="counter">
         <!-- Start of StatCounter Code --> 
         <script type="text/javascript">
@@ -26,6 +28,7 @@
         </noscript>
         <!-- End of StatCounter Code -->
     </div>
+</div>
 </div>
 <?php
     /* Always have wp_footer() just before the closing </body>

@@ -40,7 +40,9 @@
     wp_head();
 ?>
 </head>
+
 <body>
+<div id="container">
 <div id="header">
     <h1><?php bloginfo('name') ?></h1>
     <h3><?php bloginfo('description') ?></h3>
@@ -49,11 +51,13 @@
     <p class="by">~ Sydney J. Harris</p>
     <div class="clear"></div>
 </div>
-<div id="main">
-    <div id="top">
+<div id="mask">
+    <div id="menu">
         <ul>
             <li><a href="http://www.maoxuli.com/">HOME</a></li>
+            <li><a href="http://www.maoxuli.com/resume.html">RÉSUMÉ</a></li>
             <li><a href="http://www.maoxuli.com/portfolio.html">PORTFOLIO</a></li>
-            <li class="current_item"><a href="<?php echo get_option('home'); ?>">ARTICLES</a></li>
+            <li class="current_item"><a href="<?php echo get_option('home'); ?>">INSIGHTS</a></li>
         </ul>
     </div>
+    <div id="main">

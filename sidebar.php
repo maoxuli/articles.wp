@@ -1,6 +1,6 @@
 <div id="sidebar">
     <div id="highlights">
-        <img src="<?php bloginfo('wpurl'); ?>/wp-content/uploads/logo/logo.png" />
+        <img src="<?php bloginfo('wpurl'); ?>/wp-content/uploads/logo/maoxuli.jpg" />
         <div class="box">
             <?php
             $sticky = get_option( 'sticky_posts' );
@@ -22,19 +22,19 @@
         </div>
         <div class="clear"></div>
     </div>
-    <div id="menu">
+    <div id="navi">
         <?php /* If this is home page */
         if( is_home() ) { ?>
             <ul>
-                <li class="current_item"><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li class="current_item"><a href="<?php echo get_option('home'); ?>">Latest</a></li>
                 <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
                 <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
             </ul>
-            <h2>Home</h2>
+            <h2>Latest</h2>
             <?php /*If this is a category */
         } elseif ( is_category() ) { ?>
             <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
                 <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
                 <li class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
             </ul>    
@@ -42,7 +42,7 @@
             <?php /* If this is a tag */
         } elseif ( is_tag() ) { ?>
             <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
                 <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
                 <li class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
             </ul>
@@ -50,7 +50,7 @@
             <?php /* If this is highlights page */
         } elseif ( is_page('highlights') ) { ?>
             <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
                 <li class="current_item"><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
                 <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
             </ul>
@@ -58,22 +58,23 @@
             <?php /* If this is a single page */
         } elseif ( is_single() ) { ?>
             <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
                 <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
                 <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
             </ul>
-            <h2>Article</h2>
+            <h2>&nbsp;</h2>
             <?php /* else */
         } else { ?>
             <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Home</a></li>
+                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
                 <li><a href="<?php echo get_option('home'); ?>/highlights">Highlights</a></li>
                 <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
             </ul>
+            <h2>&nbsp;</h2>
         <?php } ?> 
         <div class="clear"></div>
     </div>
-    <div id="mask"></div> 
+    <div id="topics-mask"></div> 
     <div id="topics" onmouseover="showtopics()" onmouseout="closetopics()">
         <h3>Categories</h3>
         <ul class="wp-cat-list">
@@ -86,11 +87,11 @@
 <script type="text/javascript" language="javascript" >
     <!--
     function showtopics(){
-        document.getElementById("mask").style.display="block";
+        document.getElementById("topics-mask").style.display="block";
         document.getElementById("topics").style.display="block";
     }
     function closetopics(){
-        document.getElementById("mask").style.display="none";
+        document.getElementById("topics-mask").style.display="none";
         document.getElementById("topics").style.display="none";
     }
     -->
