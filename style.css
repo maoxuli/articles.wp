@@ -325,6 +325,7 @@ div.clear {
 #singlepost .post .post-title {
     margin-bottom: 5px;
     text-align: center;
+    font-size: 12pt;
 }
 #singlepost .post .post-meta {
     margin-top:0;
@@ -342,6 +343,12 @@ div.clear {
 }
 #singlepost .post .post-content p{
     text-align:justify;
+}
+#singlepost .post .post-content h1 {
+    font-size: 11pt;
+}
+#singlepost .post .post-content h2 {
+    font-size: 10.5pt;
 }
 
 #comments .comments-title {

@@ -17,17 +17,15 @@
                     <img src="<?php 
                         $logo = get_post_meta($post->ID, "post_image_value", $single = true); 
                         if(!$logo) {
-                            $cat = get_the_category(); 
-                            $logo = bloginfo('wpurl')."/wp-content/uploads/logo/".$cat[0]->category_nicename.".gif";}
-                        echo $logo;
-                    ?>" />
+                            $logo = "default.jpg";}
+                        echo bloginfo('wpurl')."/wp-content/uploads/logo/".$logo;?>" />
                 </a>
                 <div class="post">
                     <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                     <p class="post-content"><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 240, " "); ?>
                         <a href="<?php the_permalink(); ?>">[...]</a>
                     </p>
-                    <p class="post-meta"><?php the_time('m/d/Y'); ?> posted in <?php the_category(' '); ?></p>
+                    <p class="post-meta">Posted on <?php the_time('m/d/Y'); ?>. <?php the_tags(); ?></p>
                 </div>
                 <div class="clear"></div>
             </div>
