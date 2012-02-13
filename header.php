@@ -45,10 +45,10 @@
 <div id="container">
 <div id="header">
     <h1><?php bloginfo('name') ?></h1>
-    <h3><?php bloginfo('description') ?></h3>
+    <h2><?php bloginfo('description') ?></h2>
     <p>&quot;The real danger is not that computers will begin to think
         like men, but that men will begin to think like computers.&quot;</p>
-    <p class="by">~ Sydney J. Harris</p>
+    <p class="meta">~ Sydney J. Harris</p>
     <div class="clear"></div>
 </div>
 <div id="mask">

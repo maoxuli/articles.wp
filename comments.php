@@ -14,7 +14,7 @@ endif;
 <?php
 // You can start editing here -- including this comment!
 ?>
-<h3 class="comments-title">Comments (<?php echo number_format_i18n(get_comments_number()); ?>)</h3>
+<h2 class="comments-title">Comments <span>(<?php echo number_format_i18n(get_comments_number()); ?>)</span></h2>
 <?php if (have_comments()) : ?>
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through?  ?>
         <div class="navigation">

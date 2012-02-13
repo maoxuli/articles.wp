@@ -8,7 +8,7 @@
         <li><a href="http://www.limaoxu.com/">中文</a></li>
     </ul>
     <p>Copyright 2008-2012, <a href="http://www.maoxuli.com/">Maoxu Li</a>, All rights reserved.</p>
-    <p>Powered by wordpress. <a href="http://www.maoxuli.com/insights/wp-login.php" target="_blank">Login</a> &dagger;</p>
+    <p>Powered by wordpress.</p>
     <div id="counter">
         <!-- Start of StatCounter Code --> 
         <script type="text/javascript">
