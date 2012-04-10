@@ -8,25 +8,22 @@
         <li><a href="http://www.limaoxu.com/">中文</a></li>
     </ul>
     <p>Copyright 2008-2012, <a href="http://www.maoxuli.com/">Maoxu Li</a>, All rights reserved.</p>
-    <p>Powered by wordpress.</p>
+    <p>Powered by <a href="http://wordpress.org/">wordpress</a>.</p>
     <div id="counter">
-        <!-- Start of StatCounter Code --> 
+        <!-- Start of StatCounter Code for Default Guide -->
         <script type="text/javascript">
-            var sc_project=4861300; 
-            var sc_invisible=0; 
-            var sc_partition=57; 
-            var sc_click_stat=1; 
-            var sc_security="4fdb6491"; 
-        </script> 
-        <script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
-        <noscript>
-        <div class="statcounter">
-            <a title="counter" href="http://www.statcounter.com/" target="_blank"> 
-                <img class="statcounter" src="http://c.statcounter.com/4861300/0/4fdb6491/0/" 
-                     alt="counter" /></a>
-        </div>
-        </noscript>
-        <!-- End of StatCounter Code -->
+        var sc_project=4861300; 
+        var sc_invisible=0; 
+        var sc_security="4fdb6491"; 
+        </script>
+        <script type="text/javascript"
+        src="http://www.statcounter.com/counter/counter.js"></script>
+        <noscript><div class="statcounter"><a title="tumblr page
+        counter" href="http://statcounter.com/tumblr/"
+        target="_blank"><img class="statcounter"
+        src="http://c.statcounter.com/4861300/0/4fdb6491/0/"
+        alt="tumblr page counter"></a></div></noscript>
+        <!-- End of StatCounter Code for Default Guide -->
     </div>
 </div>
 </div>

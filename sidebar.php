@@ -1,6 +1,6 @@
 <div id="sidebar">
     <div id="highlights">
-        <img src="<?php echo get_option('siteurl'); ?>/wp-content/uploads/logo/maoxuli.jpg" />
+        <img src="<?php echo get_option('siteurl'); ?>/images/logo.jpg" />
         <div class="box">
             <?php
             $sticky = get_option( 'sticky_posts' );
@@ -76,8 +76,12 @@
     </div>
     <div id="topics-mask"></div> 
     <div id="topics" onmouseover="showtopics()" onmouseout="closetopics()">
+        <h3>Categories</h3>
+        <ul class="wp_list_categories">
+        <?php wp_list_categories('style=list&title_li=&orderby=order&order=ASC&show_count=1&hide_empty=0'); ?>
+        </ul>
         <h3>Tags</h3>
-        <?php wp_tag_cloud('format=list&smallest=9&largest=16&number=20&orderby=name&order=ASC&separator= . '); ?>
+        <?php wp_tag_cloud('format=list&orderby=name&order=ASC'); ?>
     </div> 
 </div>
 <script type="text/javascript" language="javascript" >

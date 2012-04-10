@@ -8,7 +8,7 @@ body {
     font-family:Georgia, "URW Bookman L", serif;    
     font-size:11pt;
     
-    background:#B4B4B4 url(images/bgpage.jpg) top fixed  no-repeat;
+    background:#B4B4B4 url(images/netmap.jpg) top fixed  no-repeat;
     -moz-background-size: 100% 100%;
            /* Gecko 1.9.2 (Firefox 3.6) */
     -o-background-size: 100% 100%;
@@ -17,7 +17,7 @@ body {
            /* Safari 3.0 */
     background-size: 100% 100%;
            /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
-    -moz-border-image: url(images/bgpage.jpg) 0;
+    -moz-border-image: url(images/netmap.jpg) 0;
            /* Gecko 1.9.1 (Firefox 3.5) */
 }
 
@@ -105,10 +105,12 @@ div.clear {
 #mask {
     margin:0;
     padding:0;
-    background:#ccc url(images/bgmask.jpg) repeat;
-    filter: Alpha(Opacity=100, Style=0);
-    -moz-opacity: 1.00;
-    opacity: 1.00;
+    /*background:#ccc url(images/bgmask.jpg) repeat;*/
+    background-color: #fffafa;
+    filter: Alpha(Opacity=85, Style=0);
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+    border:1px solid #B4B4B4;
 }
 
 /* #menu */
@@ -236,7 +238,7 @@ div.clear {
     position: relative;
     float:left;
     margin:0;
-    padding:0 5px 0 10px;
+    padding:0 8px 0 8px;
     display:block;
     border-left:1px dotted #B4B4B4;
 }
@@ -282,7 +284,7 @@ div.clear {
     padding:0;
     font-size:10pt;
 }
-#sidebar #topics ul.wp-cat-list li, 
+#sidebar #topics ul.wp_list_categories li,  
 #sidebar #topics ul.wp-tag-cloud li {
     display:inline;
     margin-right:15px;
@@ -353,6 +355,7 @@ div.clear {
     margin:0;
     padding:10px 0 5px 0;
     text-align: center;
+    color:#996600;
 }
 #singlepost .post .post-meta {
     margin:0;
@@ -371,9 +374,13 @@ div.clear {
 #singlepost .post .post-content p{
     text-align:justify;
 }
+#singlepost .post .post-content img {
+    max-width:100%;
+}
 
 #comments .comments-title {
     border-bottom: 1px solid #B4B4B4;
+    color:#996600;
 }
 #comments .comments-title span {
     font-weight: normal;
@@ -481,6 +488,7 @@ a.comment-edit-link:hover {
 }
 #respond #reply-title {
     font-size:11pt;
+    color:#996600;
 }
 #respond #cancel-comment-reply-link {
     margin-top:3px;

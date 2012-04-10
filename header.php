@@ -58,6 +58,7 @@
             <li><a href="http://www.maoxuli.com/resume.html">RÉSUMÉ</a></li>
             <li><a href="http://www.maoxuli.com/portfolio.html">PORTFOLIO</a></li>
             <li class="current_item"><a href="<?php echo get_option('home'); ?>">INSIGHTS</a></li>
+            <li><a href="http://www.notdreams.com/" target="_blank">FAMILY</a></li>
         </ul>
     </div>
     <div id="main">

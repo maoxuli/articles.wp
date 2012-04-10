@@ -21,10 +21,9 @@
                     <img src="<?php 
                         $logo = get_post_meta($post->ID, "post_image_value", $single = true); 
                         if(!$logo) {
-                            $cat = get_the_category(); 
-                            $logo = bloginfo('wpurl')."/wp-content/uploads/logo/".$cat[0]->category_nicename.".gif";}
-                        echo $logo;
-                    ?>" />
+                            echo bloginfo('wpurl')."/images/post_logo.jpg"; }
+                        else {
+                            echo bloginfo('wpurl')."/".$logo; } ?> " />
                 </a>
                 <div class="post">
                     <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
