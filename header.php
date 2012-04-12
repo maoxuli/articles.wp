@@ -23,6 +23,7 @@
         echo ' - ' . sprintf(__('Page %s', 'twentyten'), max($paged, $page));
 ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://www.maoxuli.com/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php
@@ -56,7 +57,7 @@
         <ul>
             <li><a href="http://www.maoxuli.com/">HOME</a></li>
             <li><a href="http://www.maoxuli.com/resume.html">RÉSUMÉ</a></li>
-            <li><a href="http://www.maoxuli.com/portfolio.html">PORTFOLIO</a></li>
+            <li><a href="http://www.maoxuli.com/portfolio/">PORTFOLIO</a></li>
             <li class="current_item"><a href="<?php echo get_option('home'); ?>">INSIGHTS</a></li>
             <li><a href="http://www.notdreams.com/" target="_blank">FAMILY</a></li>
         </ul>
