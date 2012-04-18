@@ -51,37 +51,29 @@
     padding:0;
     border-bottom: 1px solid #B4B4B4;
 }
-#sidebar #navi h2 {
-    float:left;
+#sidebar #navi table{
     margin:0;
     padding:0;
-    padding-top:5px;
-    font-style:italic;
-    font-size:11pt;
-    font-weight: normal;
+    border-collapse: collapse;
 }
-#sidebar #navi ul {
-    float: right;
-    margin:0;
-    padding:0;
-}
-#sidebar #navi ul li {
-    position: relative;
-    float:left;
-    margin:0;
-    padding:0 8px 0 8px;
-    display:block;
+#sidebar #navi table tr td {
     border-left:1px dotted #B4B4B4;
+    padding: 0 8px;
 }
-#sidebar #navi ul li a {
+#sidebar #navi table tr td.first_item {
+    width:100%;
+    border:none;
+    font-style: italic;
+}
+#sidebar #navi table tr td a {
     text-decoration: none;
     color: #666;
 }
-#sidebar #navi ul li a:hover {
+#sidebar #navi table tr td a:hover {
     text-decoration: none;
     color: #000;
 }
-#sidebar #navi ul li.current_item a {
+#sidebar #navi table tr td.current_item a {
     color:#000;
 }
 #sidebar #topics-mask { 
@@ -121,48 +113,45 @@
     margin-right:15px;
 }
 
-/* HOME POSTLIST */
+/* POSTLIST */
 #postlist {
-    padding: 30px 0 30px 0;
+    margin-top: 30px;
 }
 #postlist .section {
     margin-bottom: 25px;
 }
-#postlist .section img {
+#postlist .section .pic {
     float:left;
     width:150px;
+    height:150px;
     border:1px solid #B4B4B4; 
 }
-#postlist .section .post {
+#postlist .section .pic img {
+    max-width:150px;
+    max-height: 150px;
+}
+#postlist .section .text {
     float:left;
-    margin-left:20px;
-    width:480px;/*720-30*2-(150+1*2)-20*/
+    height:151px;
+    border-bottom:1px dotted #B4B4B4;
+    padding-left:20px;
+    width:488px;/*720-30*2-(150+1*2)-20*/
     overflow: hidden;
+    position: relative;
 }
-#postlist .section .post .post-title {
-    margin:0;
-    font-size: 11pt;
+#postlist .section .text .title {
+    color:#996600;
 }
-#postlist .section .post .post-content {
-    margin-top:5px;
-    margin_bottom:0;
-    text-align:justify;
+#postlist .section .text .content {
     font-size:10.5pt;
-    height:95px;
     overflow: hidden;
 }
-#postlist .section .post .post-meta {
-    margin:0;
+#postlist .section .text .meta {
+    position:absolute;
+    bottom: 0;
     font-size:10pt;
     font-style:italic;
-    color:#666;
-    border-bottom:1px dotted #B4B4B4;
-}
-#postlist .section .post .post-meta a {
-    color:#11c;
-}
-#postlist .section .post .post-meta a:hover {
-    color:#36c;
+    color:#996600;
 }
 #postlist .navi .left {
     float:left;
@@ -170,45 +159,31 @@
 #postlist .navi .right {
     float:right;
 }
-#postlist .navi a {
-    color:#11c;
-}
-#postlist .navi a:hover {
-    color:#36c;
-}
 
 /* SINGLE */
 #singlepost .post {
-    margin:0;
-    padding:0 0 30px 0;
+    padding-bottom: 30px;
 }
-#singlepost .post .post-title {
-    margin:0;
-    padding:10px 0 5px 0;
+#singlepost .post .title {
+    padding-right:30px;
     text-align: center;
-    color:#996600;
+    color: #996600;
 }
-#singlepost .post .post-meta {
-    margin:0;
-    padding:5px 0 10px 0;
+#singlepost .post .meta {
+    padding-right: 30px;
     text-align: center;
     font-size:9pt;
     font-style:italic;
     color:#666;
 }
-#singlepost .post .post-meta a {
-    color:#11c;
-}
-#singlepost .post .post-meta a:hover {
-    color:#36c;
-}
-#singlepost .post .post-content p{
+#singlepost .post .content p{
     text-align:justify;
 }
-#singlepost .post .post-content img {
+#singlepost .post .content img {
     max-width:100%;
 }
 
+/* COMMENTS */
 #comments .comments-title {
     border-bottom: 1px solid #B4B4B4;
     color:#996600;

@@ -1,6 +1,6 @@
 <div id="sidebar">
     <div id="highlights">
-        <img src="<?php echo get_option('siteurl'); ?>/images/logo.jpg" />
+        <img src="<?php echo bloginfo('wpurl'); ?>/images/logo.jpg" />
         <div class="box">
             <?php
             $sticky = get_option( 'sticky_posts' );
@@ -25,54 +25,66 @@
     <div id="navi">
         <?php /* If this is home page */
         if( is_home() ) { ?>
-            <ul>
-                <li class="current_item"><a href="<?php echo get_option('home'); ?>">Latest</a></li>
-                <li><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></li>
-                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
-            </ul>
-            <h2>Latest</h2>
+        <table>
+            <tr>
+                <td class="first_item">Latest</td>
+                <td class="current_item"><a href="<?php echo get_option('home'); ?>">Latest</a></td>
+                <td><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></td>
+                <td onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></td>
+            </tr>
+        </table>
             <?php /*If this is a category */
         } elseif ( is_category() ) { ?>
-            <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
-                <li><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></li>
-                <li class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
-            </ul>    
-            <h2><?php single_cat_title(); ?></h2>
+        <table>
+            <tr>
+                <td class="first_item"><?php single_cat_title(); ?></td>
+                <td><a href="<?php echo get_option('home'); ?>">Latest</a></td>
+                <td><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></td>
+                <td class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></td>
+            </tr>
+        </table>    
             <?php /* If this is a tag */
         } elseif ( is_tag() ) { ?>
-            <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
-                <li><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></li>
-                <li class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
-            </ul>
-            <h2><?php single_tag_title(); ?></h2>
+        <table>
+            <tr>
+                <td class="first_item"><?php single_tag_title(); ?></td>
+                <td><a href="<?php echo get_option('home'); ?>">Latest</a></td>
+                <td><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></td>
+                <td class="current_item" onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></td>
+            </tr>
+        </table>
             <?php /* If this is highlights page */
         } elseif ( is_page('highlights') ) { ?>
-            <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
-                <li class="current_item"><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></li>
-                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
-            </ul>
-            <h2>Highlights</h2>
+        <table>
+            <tr>
+                <td class="first_item">Highlights</td>
+                <td><a href="<?php echo get_option('home'); ?>">Latest</a></td>
+                <td class="current_item"><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></td>
+                <td onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></td>
+            </tr>
+        </table>
+            
             <?php /* If this is a single page */
         } elseif ( is_single() ) { ?>
-            <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
-                <li><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></li>
-                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
-            </ul>
-            <h2>&nbsp;</h2>
+        <table>
+            <tr>
+                <td class="first_item">&nbsp;</td>
+                <td><a href="<?php echo get_option('home'); ?>">Latest</a></td>
+                <td><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></td>
+                <td onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></td>
+            </tr>
+        </table>
             <?php /* else */
         } else { ?>
-            <ul>
-                <li><a href="<?php echo get_option('home'); ?>">Latest</a></li>
-                <li><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></li>
-                <li onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></li>
-            </ul>
-            <h2>&nbsp;</h2>
+        <table>
+            <tr>
+                <td class="first_item">&nbsp;</td>
+                <td><a href="<?php echo get_option('home'); ?>">Latest</a></td>
+                <td><a href="<?php echo get_option('home'); ?>/highlights/">Highlights</a></td>
+                <td onmouseover="showtopics()" onmouseout="closetopics()"><a href="#">Topics</a></td>
+            </tr>
+        </table>
         <?php } ?> 
-        <div class="clear"></div>
     </div>
     <div id="topics-mask"></div> 
     <div id="topics" onmouseover="showtopics()" onmouseout="closetopics()">

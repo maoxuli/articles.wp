@@ -1,9 +1,10 @@
+v2.3 (04/18/2012)
 ---------------
-* Refine style
 * Image width in single post
 * Image link to relative position from "siteurl"
 * Family blog entry
-
+* Link to style.css of owner's website
+* Realize menu with table to be compatible with IE6
 
 v2.2 (02/12/2012)
 -----------------

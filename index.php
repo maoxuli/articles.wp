@@ -13,20 +13,22 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="section">
-                <a href="<?php the_permalink(); ?>">
-                    <img src="<?php 
-                        $logo = get_post_meta($post->ID, "post_image_value", $single = true); 
-                        if(!$logo) {
-                            echo bloginfo('wpurl')."/images/post_logo.jpg"; }
-                        else {
-                            echo bloginfo('wpurl')."/".$logo; } ?> " />
-                </a>
-                <div class="post">
-                    <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <p class="post-content"><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 240, " "); ?>
+                <div class="pic">
+                    <a href="<?php the_permalink(); ?>">
+                        <img src="<?php 
+                            $logo = get_post_meta($post->ID, "post_image_value", $single = true); 
+                            if(!$logo) {
+                                echo bloginfo('wpurl')."/images/post_logo.jpg"; }
+                            else {
+                                echo bloginfo('wpurl')."/".$logo; } ?> " />
+                    </a>
+                </div>
+                <div class="text">
+                    <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <p class="content"><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 240, " "); ?>
                         <a href="<?php the_permalink(); ?>">[...]</a>
                     </p>
-                    <p class="post-meta">Posted on <?php the_time('m/d/Y'); ?>. <?php the_tags(); ?></p>
+                    <p class="meta">Posted on <?php the_time('m/d/Y'); ?>. <?php the_tags(); ?></p>
                 </div>
                 <div class="clear"></div>
             </div>
