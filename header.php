@@ -58,7 +58,7 @@
             <tr>
                 <td><a href="http://www.maoxuli.com/">HOME</a></td>
                 <td><a href="http://www.maoxuli.com/resume.html">RÉSUMÉ</a></td>
-                <td><a href="http://www.maoxuli.com/portfolio/">PORTFOLIO</a></td>
+                <td><a href="http://www.maoxuli.com/portfolio.html">PORTFOLIO</a></td>
                 <td class="current_item"><a href="<?php echo get_option('home'); ?>">INSIGHTS</a></td>
                 <td><a href="http://www.notdreams.com/" target="_blank">FAMILY</a></td>
             </tr>
