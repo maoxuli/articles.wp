@@ -199,10 +199,11 @@
     text-align:justify;
     margin-bottom: 10px;
 }
-#singlepost .post .content ul {
+#singlepost .post .content ul,
+#singlepost .post .content ol {
     margin-top:15px;
     margin-bottom: 10px;
-    font-size: 10pt;
+    font-size: 10.5pt;
 }
 #singlepost .post .content img {
     max-width:100%;
